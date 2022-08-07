@@ -17,6 +17,25 @@ plugins {
     id 'application'
 }
 
+apply plugin: 'checkstyle'
+
+checkstyle {
+    toolVersion '7.8.1'
+    configFile file("config/checkstyle/checkstyle.xml")
+}
+
+checkstyleMain {
+    source ='src/main/java'
+}
+checkstyleTest {
+    source ='src/test/java'
+}
+
+tasks.withType(Checkstyle) {
+    ignoreFailures = false
+    showViolations = true
+}
+
 group = 'com.gmail.gremlin.gosha.recipe.backend'
 version = '0.0.1-SNAPSHOT'
 
@@ -36,6 +55,8 @@ dependencies {
     // This dependency is used by the application.
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.google.guava:guava:31.0.1-jre'
+
+    implementation 'org.apache.maven.plugins:maven-checkstyle-plugin:3.1.2'
 }
 
 application {

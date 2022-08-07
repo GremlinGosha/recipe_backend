@@ -3,6 +3,7 @@
  */
 package com.gmail.gremlin.gosha
 
+import com.gmail.gremlin.gosha.recipe.backend.App
 import spock.lang.Specification
 
 class AppTest extends Specification {
