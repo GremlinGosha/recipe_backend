@@ -57,6 +57,8 @@ dependencies {
     implementation 'com.google.guava:guava:31.0.1-jre'
 
     implementation 'org.apache.maven.plugins:maven-checkstyle-plugin:3.1.2'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 application {
