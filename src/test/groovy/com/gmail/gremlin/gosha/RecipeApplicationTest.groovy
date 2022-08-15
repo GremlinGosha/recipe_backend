@@ -5,6 +5,8 @@ package com.gmail.gremlin.gosha
 
 import com.gmail.gremlin.gosha.recipe.backend.controller.AccountController
 import com.gmail.gremlin.gosha.recipe.backend.models.AccountDto
+import com.gmail.gremlin.gosha.recipe.backend.services.AccountService
+import com.gmail.gremlin.gosha.recipe.backend.services.AccountServiceImplementation
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -15,7 +17,7 @@ class AccountControllerTest extends Specification {
     //@Unroll
     def "getAccountById verify returns right account"() {
         setup: //given
-        def controller = new AccountController()
+        def controller = new AccountController(new AccountServiceImplementation())
 
         when:
         AccountDto result = controller.getAccountById(id)
