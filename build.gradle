@@ -63,7 +63,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'com.gmail.gremlin.gosha.recipe.backend.App'
+    mainClass = 'com.gmail.gremlin.gosha.recipe.backend.RecipeApplication'
 }
 
 tasks.named('test') {

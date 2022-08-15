@@ -3,8 +3,8 @@
  */
 package com.gmail.gremlin.gosha
 
-import com.gmail.gremlin.gosha.recipe.backend.AccountController
-import com.gmail.gremlin.gosha.recipe.backend.AccountDto
+import com.gmail.gremlin.gosha.recipe.backend.controller.AccountController
+import com.gmail.gremlin.gosha.recipe.backend.models.AccountDto
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -12,9 +12,9 @@ class AccountControllerTest extends Specification {
 
     private AccountController controller;
 
-    @Unroll
+    //@Unroll
     def "getAccountById verify returns right account"() {
-        setup:
+        setup: //given
         def controller = new AccountController()
 
         when:
@@ -24,6 +24,7 @@ class AccountControllerTest extends Specification {
         result.getId() == id
         result.getName() == name
 
+        //where is cleanup?
         where:
         id | name
         1L | 'name1'

@@ -1,4 +1,4 @@
-package com.gmail.gremlin.gosha.recipe.backend;
+package com.gmail.gremlin.gosha.recipe.backend.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccountDto {
-
-  Long id;
+public class CreateAccountDto {
   String name;
-
+  String surname;
+  String email;
+  String phone;
 }
