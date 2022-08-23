@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  database:
+    container_name: database
+    image: postgres:14.5
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=pgUser
+      - POSTGRES_PASSWORD=pgPassword
+      - POSTGRES_DB=recipedb

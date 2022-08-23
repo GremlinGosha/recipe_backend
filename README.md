@@ -1,0 +1,1 @@
+To run docker-compose locally: docker-compose -f docker/docker-compose.yml up -d
