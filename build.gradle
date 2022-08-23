@@ -15,6 +15,18 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+
+    //migrations
+    id "org.flywaydb.flyway" version "9.1.6"
+}
+
+flyway {
+    driver = 'org.postgresql.Driver'
+    url = 'jdbc:postgresql://localhost:5432/recipedb'
+    user = 'pgUser'
+    password = 'pgPassword'
+    schemas = ['public']
+    defaultSchema= 'public'
 }
 
 apply plugin: 'checkstyle'
@@ -59,6 +71,9 @@ dependencies {
     implementation 'org.apache.maven.plugins:maven-checkstyle-plugin:3.1.2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.24'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 
 application {
