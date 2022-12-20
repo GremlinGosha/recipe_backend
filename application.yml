@@ -15,3 +15,10 @@ spring:
     locations: classpath:/db/migration/
     validate-on-migrate: true
     baseline-on-migrate: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate.dll-auto: true
+    show-sql: true
